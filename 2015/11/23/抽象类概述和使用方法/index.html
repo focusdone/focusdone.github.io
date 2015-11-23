@@ -9,10 +9,7 @@
     
     <meta name="author" content="focusdone">
     
-    <meta name="description" content="#乐观锁和悲观锁在多用户环境中，在同一时间可能会有多个用户更新相同的记录，这会产生冲突，这就是并发性问题。典型的冲突有：
-
-丢失更新：一个事务的更新覆盖了其它事务的更新结果，就是所谓的更新丢失。例如：用户A把值从6改为2，用户B把值从2改为6，则用户A丢失了他的更新。
-脏读：当一个事务读取其它完成一">
+    <meta name="description" content="抽象类概述和使用方法抽象类概述抽象类往往用来表征对问题领域进行分析、设计中得出的抽象概念，是对一系列看上去不同，但是本质上相同的具体概念的抽象。通常在编程语句中用 abstract 修饰的类是抽象类，在java中含有抽象方法的类称为抽象类，不能生成对象。在面向对象的概念中，所有的对象都是通过类来描绘">
     
     
     
@@ -68,15 +65,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/21/数据库/" title="" itemprop="url"></a>
+      <a href="/2015/11/23/抽象类概述和使用方法/" title="" itemprop="url"></a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="focusdone">focusdone</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-11-20T16:06:05.000Z" itemprop="datePublished">2015-11-21</time>
-    更新日期:<time datetime="2015-11-20T16:06:05.000Z" itemprop="dateModified">2015-11-21</time>
+    <time datetime="2015-11-23T07:46:27.000Z" itemprop="datePublished">2015-11-23</time>
+    更新日期:<time datetime="2015-11-23T07:46:27.000Z" itemprop="dateModified">2015-11-23</time>
     
   </p>
 </header>
@@ -85,14 +82,15 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#抽象类概述和使用方法"><span class="toc-number">1.</span> <span class="toc-text">抽象类概述和使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类概述"><span class="toc-number">1.1.</span> <span class="toc-text">抽象类概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与具体类以及接口的对比"><span class="toc-number">1.2.</span> <span class="toc-text">抽象类与具体类以及接口的对比</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>#乐观锁和悲观锁<br>在多用户环境中，在同一时间可能会有多个用户更新相同的记录，这会产生冲突，这就是并发性问题。<br>典型的冲突有：</p>
-<ul>
-<li>丢失更新：一个事务的更新覆盖了其它事务的更新结果，就是所谓的更新丢失。例如：用户A把值从6改为2，用户B把值从2改为6，则用户A丢失了他的更新。</li>
-<li>脏读：当一个事务读取其它完成一半事务的记录时，就会发生脏读取。例如：用户A,B看到的值都是6，用户B把值改为2，用户A读到的值仍为6。<br>为了解决这些并发带来的问题。 我们需要引入并发控制机制。<br>##基本概念<br>悲观锁：假定会发生并发冲突，屏蔽一切可能违反数据完整性的操作。<br>乐观锁：假设不会发生并发冲突，只在提交操作时检查是否违反数据完整性。乐观锁不能解决脏读的问题。</li>
-</ul>
+		<h1 id="抽象类概述和使用方法">抽象类概述和使用方法</h1><h2 id="抽象类概述">抽象类概述</h2><p>抽象类往往用来表征对问题领域进行分析、设计中得出的抽象概念，是对一系列看上去不同，但是本质上相同的具体概念的抽象。通常在编程语句中用 abstract 修饰的类是抽象类，在java中含有抽象方法的类称为抽象类，不能生成对象。<br>在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。</p>
+<h2 id="抽象类与具体类以及接口的对比">抽象类与具体类以及接口的对比</h2><ol>
+<li>抽象类不能直接实例化，并且对抽象类使用 new 运算符会导致编译时错误。虽然一些变量和值在编译时的类型可以是抽象的，但是这样的变量和值必须或者为null，或者含有对非抽象类的实例的引用（此非抽象类是从抽象类派生的）。</li>
+<li>允许（但不要求）抽象类包含抽象成员。</li>
+<li>抽象类不能被密封。</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -102,7 +100,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/11/21/数据库/" data-title="FOCUSDONE 木生木长" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/11/23/抽象类概述和使用方法/" data-title="FOCUSDONE 木生木长" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -112,13 +110,21 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2015/11/23/抽象类概述和使用方法/" title="">
+ <a href="/2015/11/23/markdown简要语法/" title="">
   <strong>PREVIOUS:</strong><br/>
   <span>
   (no title)</span>
 </a>
 </div>
 
+
+<div class="next">
+<a href="/2015/11/21/数据库/"  title="">
+ <strong>NEXT:</strong><br/> 
+ <span>(no title)
+</span>
+</a>
+</div>
 
 </nav>
 
@@ -128,7 +134,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
-  
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#抽象类概述和使用方法"><span class="toc-number">1.</span> <span class="toc-text">抽象类概述和使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类概述"><span class="toc-number">1.1.</span> <span class="toc-text">抽象类概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与具体类以及接口的对比"><span class="toc-number">1.2.</span> <span class="toc-text">抽象类与具体类以及接口的对比</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">
