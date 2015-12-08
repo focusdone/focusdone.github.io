@@ -4,13 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>FOCUSDONE 木生木长</title>
+    <title>多线程编程模型 | FOCUSDONE 木生木长</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="focusdone">
     
-    <meta name="description" content="title: 抽象类概述和使用方法
-抽象类概述抽象类往往用来表征对问题领域进行分析、设计中得出的抽象概念，是对一系列看上去不同，但是本质上相同的具体概念的抽象。通常在编程语句中用 abstract 修饰的类是抽象类，在java中含有抽象方法的类称为抽象类，不能生成对象。在面向对象的概念中，所有的对象">
+    <meta name="description" content="多线程编程模型">
     
     
     
@@ -66,15 +65,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2015/11/23/抽象类概述和使用方法/" title="" itemprop="url"></a>
+      <a href="/2015/12/08/多线程编程模型/" title="多线程编程模型" itemprop="url">多线程编程模型</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="focusdone">focusdone</a>
     </p>
   <p class="article-time">
-    <time datetime="2015-11-23T08:13:38.000Z" itemprop="datePublished">2015-11-23</time>
-    更新日期:<time datetime="2015-11-23T08:13:38.000Z" itemprop="dateModified">2015-11-23</time>
+    <time datetime="2015-12-08T07:54:42.000Z" itemprop="datePublished">2015-12-08</time>
+    更新日期:<time datetime="2015-12-08T07:54:42.000Z" itemprop="dateModified">2015-12-08</time>
     
   </p>
 </header>
@@ -83,32 +82,10 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目錄</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类概述"><span class="toc-number">1.</span> <span class="toc-text">抽象类概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与具体类以及接口的对比"><span class="toc-number">2.</span> <span class="toc-text">抽象类与具体类以及接口的对比</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程编程模型"><span class="toc-number">1.</span> <span class="toc-text">多线程编程模型</span></a></li></ol>
 		</div>
 		
-		<p>title: 抽象类概述和使用方法</p>
-<h2 id="抽象类概述">抽象类概述</h2><p>抽象类往往用来表征对问题领域进行分析、设计中得出的抽象概念，是对一系列看上去不同，但是本质上相同的具体概念的抽象。通常在编程语句中用 abstract 修饰的类是抽象类，在java中含有抽象方法的类称为抽象类，不能生成对象。<br>在面向对象的概念中，所有的对象都是通过类来描绘的，但是反过来，并不是所有的类都是用来描绘对象的，如果一个类中没有包含足够的信息来描绘一个具体的对象，这样的类就是抽象类。</p>
-<h2 id="抽象类与具体类以及接口的对比">抽象类与具体类以及接口的对比</h2><ol>
-<li>抽象类不能直接实例化，并且对抽象类使用 new 运算符会导致编译时错误。虽然一些变量和值在编译时的类型可以是抽象的，但是这样的变量和值必须或者为null，或者含有对非抽象类的实例的引用（此非抽象类是从抽象类派生的）。</li>
-<li>允许（但不要求）抽象类包含抽象成员。</li>
-<li>抽象类不能被密封。</li>
-</ol>
-<p>抽象类表示该类中可能已经有一些方法的具体定义，但是接口就仅仅只能定义各个方法的界面（方法名，参数列表，返回类型），并不关心具体细节。</p>
-<p><strong> 接口是引用类型的，和抽象类的相似之处有三点： </strong></p>
-<ol>
-<li>不能实例化；</li>
-<li>包含未实现的方法声明；</li>
-<li>派生类必须实现未实现的方法，抽象类是抽象方法，接口则是所有成员（不仅是方法包括其他成员）。</li>
-</ol>
-<p><strong> 抽象类与接口紧密相关。然而接口又比抽象类更抽象，这主要体现在它们的差别上： </strong></p>
-<ol>
-<li>类可以实现无限个接口，但仅能从一个抽象（或任何其他类型）类继承，从抽象类派生的类仍可实现接口，从而得出接口是用来解决多重继承问题的。</li>
-<li>抽象类当中可以存在非抽象的方法，可接口不能，且它里面的方法只是一个声明必须用<em>public</em>来修饰没有具体实现的方法。</li>
-<li>抽象类中的成员变量可以被不同的修饰符来修饰，可接口中的成员变量默认的都是静态常量（static final）。</li>
-</ol>
-<p><strong> 抽象类是对象的抽象，然而接口是一种行为规范。 </strong><br>抽象类里面可以有非抽象方法但接口里只能有抽象方法，声明方法的存在而不去实现它的类被叫做抽像类（abstract class），它用于要创建一个体现某些基本行为的类，并为该类声明方法，但不能在该类中实现该类的情况。不能创建abstract类的实例。然而可以创建一个变量，其类型是一个抽像类，并让它指向具体子类的一个实例。 <strong><em>不能有抽像构造函数或抽像静态方法</em></strong>。</p>
-<p>Abstract类的子类为它们父类中的所有抽像方法提供实现，否则它们也是抽像类。取而代之，在子类中实现该方法。知道其行为的其它类可以在类中实现这些方法。接口（interface）是抽像类的变体。在接口中，所有方法都是抽像的。多继承性可通过实现这样的接口而获得。接口中的所有方法都是抽像的，没有一个有程序体。接口只可以定义static final成员变量。接口的实现与子类相似，除了该实现类不能从接口定义中继承行为。当类实现特殊接口时，它定义（即将程序体给予）所有这种接口的方法。然后，它可以在实现了该接口的类的任何对像上调用接口的方法。由于有抽像类，它允许使用接口名作为引用变量的类型。通常的动态联编将生效。引用可以转换到接口类型或从接口类型转换，instanceof 运算符可以用来决定某对象的类是否实现了接口</p>
-  
+		<h1 id="多线程编程模型">多线程编程模型</h1>  
 	</div>
 		<footer class="article-footer clearfix">
 
@@ -117,7 +94,7 @@
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2015/11/23/抽象类概述和使用方法/" data-title="FOCUSDONE 木生木长" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2015/12/08/多线程编程模型/" data-title="多线程编程模型 | FOCUSDONE 木生木长" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -128,9 +105,9 @@
  
 
 <div class="next">
-<a href="/2015/11/23/markdown简要语法/"  title="">
+<a href="/2015/12/08/乐观锁和悲观锁/"  title="乐观锁和悲观锁">
  <strong>NEXT:</strong><br/> 
- <span>(no title)
+ <span>乐观锁和悲观锁
 </span>
 </a>
 </div>
@@ -143,7 +120,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目錄</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类概述"><span class="toc-number">1.</span> <span class="toc-text">抽象类概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#抽象类与具体类以及接口的对比"><span class="toc-number">2.</span> <span class="toc-text">抽象类与具体类以及接口的对比</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#多线程编程模型"><span class="toc-number">1.</span> <span class="toc-text">多线程编程模型</span></a></li></ol>
   </div>
 
 <div id="asidepart">
